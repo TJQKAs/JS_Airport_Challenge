@@ -25,6 +25,15 @@ describe("Airport", function() {
     console.log(airport);
   });
 
+  it("should be able to instruct a plane to take off", function() {
+    airport.land(plane1)
+    airport.take_off(plane1)
+    expect(airport.hanger).toEqual([]);
+    expect(plane1.isFlying).toEqual(true);
+    console.log(airport);
+  });
+
+
 
 
 
