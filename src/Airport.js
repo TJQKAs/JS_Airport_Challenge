@@ -7,4 +7,5 @@ function Airport(capacity) {
 
 Airport.prototype.land = function(plane) {
   this.hanger.push(plane);
+  plane.isFlying = false;
 };

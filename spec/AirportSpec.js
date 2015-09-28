@@ -21,6 +21,7 @@ describe("Airport", function() {
   it("should be able to instruct a plane to land", function() {
     airport.land(plane1)
     expect(airport.hanger).toEqual([plane1]);
+    expect(plane1.isFlying).toEqual(false);
     console.log(airport);
   });
 
