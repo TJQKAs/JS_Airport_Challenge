@@ -4,12 +4,19 @@ function Airport(capacity) {
 };
 
 
-
 Airport.prototype.land = function(plane) {
   this.hanger.push(plane);
   plane.isFlying = false;
 
+  // if (airport.hanger.length == airport.capacity) {
+  //   throw "AIRPORT FULL, LANDING IS PROHIBITED"
+  // }
+  // else {
+  //   this.hanger.push(plane);
+  //   plane.isFlying = false;
+  // };
 };
+
 
 Airport.prototype.take_off = function(plane) {
   var index = this.hanger.indexOf(plane);
