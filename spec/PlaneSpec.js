@@ -1,5 +1,5 @@
 describe("Plane", function() {
-  var player;
+
 
   beforeEach(function() {
     plane = new Plane();
