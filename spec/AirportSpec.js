@@ -20,28 +20,33 @@ describe("Airport", function() {
     console.log(airport);
   });
 
+
   it("should be able to instruct a plane to land", function() {
-    airport.land(plane1)
+    airport.land(plane1);
     expect(airport.hanger).toEqual([plane1]);
     expect(plane1.isFlying).toEqual(false);
     console.log(airport);
   });
 
   it("should be able to instruct a plane to take off", function() {
-    airport.land(plane1)
-    airport.take_off(plane1)
+    airport.land(plane1);
+    airport.take_off(plane1);
     expect(airport.hanger).toEqual([]);
     expect(plane1.isFlying).toEqual(true);
     console.log(airport);
   });
 
-  // it("should fobid a plane to land if the airport is full", function() {
-  //   airport2.land(plane1)
-  //   airport2.land(plane2)
-  //   expect(airport2.land(plane3)).toThrow(new Error("AIRPORT FULL, LANDING IS PROHIBITED"));
-  //   console.log(airport2);
-  // });
-  //
 
+  it("should forbid a plane to land if the airport is full", function() {
+    airport2.land(plane1);
+    airport2.land(plane2);
+    expect(function(){airport2.land(plane3);}).toThrowError("AIRPORT FULL, LANDING IS PROHIBITED");
+    console.log(airport2);
+  });
+
+  it("cannot releases an airplane in case the hanger is empty", function() {
+  expect(function(){airport.take_off(plane1);}).toThrowError("THERE IS NO AIRCRAFT ON THE HANGER")
+
+  });
 
 });
