@@ -45,8 +45,19 @@ describe("Airport", function() {
   });
 
   it("cannot releases an airplane in case the hanger is empty", function() {
-  expect(function(){airport.take_off(plane1);}).toThrowError("THERE IS NO AIRCRAFT ON THE HANGER")
+  expect(function(){airport.take_off(plane1);}).toThrowError("THERE IS NO AIRCRAFT IN THE HANGER")
 
   });
 
+  it ("cannot allows to planes landing in the stormy weather", function(){
+     expect(function(){airport.land(plane1);}).toThrowError("THE LANDING IS PROHIBITED CAUSE OF THE STORMY WEATHER")
+  });
+
+
+  it("cannot releases airplanes in case the weather is stormy", function() {
+     airport.land(plane1);
+     expect(function(){airport.take_off(plane1);}).toThrowError("THE TAKE OFF IS PROHIBITED CAUSE OF THE STORMY WEATHER")
+
+
+  });
 });

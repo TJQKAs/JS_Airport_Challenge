@@ -20,12 +20,12 @@ Airport.prototype.land = function(plane) {
 
 Airport.prototype.take_off = function(plane) {
   if (this.hanger.length == 0) {
-  throw new Error ("THERE IS NO AIRCRAFT ON THE HANGER")
+  throw new Error ("THERE IS NO AIRCRAFT IN THE HANGER")
 }
   else {
   var index = this.hanger.indexOf(plane);
-  this.hanger.splice(index, 1);
+    this.hanger.splice(index, 1);
 
-  plane.isFlying = true;
+    plane.isFlying = true;
 };
 };

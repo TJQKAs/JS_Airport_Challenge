@@ -1,5 +1,5 @@
 describe("Plane", function() {
-
+ var plane;
 
   beforeEach(function() {
     plane = new Plane();
@@ -9,7 +9,20 @@ describe("Plane", function() {
     expect(plane.isFlying).toBe(true);
   });
 
+  it("plane can land", function() {
+  plane.land();
+  expect(plane.isFlying).toBe(false);
 });
+
+it("plane can take off", function() {
+  plane.take_off();
+  expect(plane.isFlying).toBe(true);
+});
+
+});
+
+
+
 
   // it("should be able to play a Song", function() {
   //   player.play(song);
